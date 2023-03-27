@@ -3,7 +3,11 @@ var ctx;
 
 var fruit = [
     {name: "Apple", quantity:20, color:"red"},
-    {name: "Orange", quantity:10, color: "orange"}
+    {name: "Orange", quantity:10, color: "orange"},
+    {name: "Banana", quantity:15, color: "yellow"},
+    {name: "Kiwi", quantity:5, color: "green"},
+    {name: "Blueberry", quantity:5, color: "blue"},
+    {name: "Grapes", quantity:10, color: "purple"}
 ];
 
 
@@ -17,15 +21,20 @@ function start(){
 
 function draw(){
 
-    ctx.font = "30px Arial";
+    ctx.font = "bold 18px Arial";
+    //ctx.textAlign = "left";
     var height = 0;
     var heightSize = canvas.height/fruit.length;
+    var widthSize;
 
     for(var i = 0 ; i < fruit.length ; i++){
+        widthSize = (fruit[i].quantity/25) * canvas.width;
+
         ctx.fillStyle = fruit[i].color;
-        ctx.fillRect(0,height,(fruit[i].quantity/50) * canvas.width, heightSize);
+        ctx.fillRect(0,height,widthSize, heightSize);
         ctx.fillStyle = "black";
-        ctx.fillText(fruit[i].name, 5, height+heightSize/2);
+        ctx.fillText(fruit[i].quantity, 15, height -10 +heightSize/2);
+        ctx.fillText(fruit[i].name, 5, height +10 +heightSize/2);
         height += heightSize;
     }
 }
