@@ -1,6 +1,33 @@
+#container{
+    position: relative;
+    display: flex;
+}
+
+h1{
+    position: absolute;
+    text-align: center;
+    font-family: Courier;
+    left: 20px;
+    z-index: 1;
+}
+
 #myCanvas{
     position: relative;
     background-color: bisque;
-    padding-top: 5% ;
+    padding-top: 80px;
     padding-bottom: 5%;
+}
+
+#inputBox{
+    text-align: center;
+    position: relative;
+    flex-direction: column;
+    width: 70px;
+}
+
+input[type = number]{
+ width: 50px;
+ height: 20px;
+ margin: 5px;
+ background-color: bisque;
 }
