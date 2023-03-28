@@ -3,6 +3,8 @@ h2{
 }
 
 p{
+    display: flex;
+    flex-direction: column;
     border: 2px grey;
     padding: 10px;
     margin: 20px;
