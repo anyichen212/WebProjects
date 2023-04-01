@@ -1,6 +1,12 @@
 var canvas;
 var context;
 
+const circle = {
+    count: 20,
+    speed: 1.5,
+    colors: ["#ffffff", "#FDE38A", "#ffffb3", "#ffeb99", "#ffb380", "#bbff99", "#80ffd4", "#ff80ff"]
+};
+
 function start(){
     canvas = document.getElementById("myCanvas");
     context = canvas.getContext("2d");
@@ -14,8 +20,24 @@ function clear(){
     context.clearRect(0, 0, canvas.width, canvas.height);
 }
 
+var check = true;
 function update(){
-    //suns.r -= 0.2;
+
+    //loop the sun's shine
+    if(check){
+        suns.r -= 0.05;
+    }
+    else{
+        suns.r += 0.05;
+    }
+
+    if(suns.r < 0.8){
+        check = false;
+    }
+
+    if(suns.r > 0.9){
+        check = true;
+    }
 }
 
 function draw() {
@@ -23,20 +45,42 @@ function draw() {
     sun();
     house();
     ground();
+    drawCircle();
 }
 
 function mainLoop () {
     clear();
     update();
     draw();
-    window.setTimeout(mainLoop, 1000 / 60);
+    window.setTimeout(mainLoop, 1000/5);
+   }
+
+function drawCircle () {
+    var x;
+    var y;
+    var r;
+    var circleColor;
+    for(var i = 0 ; i < circle.count ; i++){
+        x = Math.random()*canvas.width;
+        y = Math.random()*canvas.height;
+        r = Math.random()*3;
+
+        context.beginPath();
+        context.arc(x, y, r, 0, 2 * Math.PI, true);
+        context.closePath();
+        circleColor = circle.colors[Math.floor(Math.random()*circle.colors.length)];
+        //circleColor = circleColor + Math.floor(Math.random()*10)+0;
+        context.fillStyle = circleColor;
+        context.fill();
+    }
+
    }
 
 function house(){
     context.fillStyle = "brown";
     context.fillRect(100, 230, 200,100);
 
-    context.fillStyle = "yellow";
+    context.fillStyle = "peru";
     for(var i = 240 ; i < 330 ; i += 30){
         context.fillRect(100, i, 200, 10);
     }
@@ -54,9 +98,13 @@ function house(){
     context.fillStyle = "brown";
     context.fill();
 
+    context.fillStyle = "Maroon";
+    context.fillRect(80,231, 240, 5);
+
     //ceiling pipe
-    context.fillStyle = "yellow";
+    context.fillStyle = "peru";
     context.fillRect(250,140, 20, 50);
+    context.fillStyle = "Maroon";
     context.fillRect(247,140, 26, 5);
 
     //door
@@ -68,16 +116,16 @@ function house(){
 }
 
 const suns = {
-    r: 1.1
+    r: 1.0
 }
 
 function sun() {
     
     var radgrad = context.createRadialGradient(340,60,0,340,60,50);
     radgrad.addColorStop(0, 'rgba(255,255,0,1)');
-    radgrad.addColorStop(0.7, 'rgba(255,250,50,.7)');
-    radgrad.addColorStop(0.9, 'rgba(255,255,100,.3)');
-    radgrad.addColorStop(1, 'rgba(255,255,100,.1)');
+    radgrad.addColorStop(suns.r-0.3, 'rgba(255,250,50,.7)');
+    radgrad.addColorStop(suns.r-0.1, 'rgba(255,255,100,.3)');
+    radgrad.addColorStop(suns.r, 'rgba(255,255,100,.1)');
 
     context.beginPath();
     context.arc(340, 60, 50, 0, 2 * Math.PI, true);

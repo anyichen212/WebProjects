@@ -1,7 +1,11 @@
 #gameArea{
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #myCanvas{
     border: solid 5px black;
+    margin: 10px;
 }
