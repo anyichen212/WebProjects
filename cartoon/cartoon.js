@@ -45,7 +45,9 @@ function draw() {
     sun();
     house();
     ground();
+    character();
     drawCircle();
+    text();
 }
 
 function mainLoop () {
@@ -55,6 +57,36 @@ function mainLoop () {
     window.setTimeout(mainLoop, 1000/5);
    }
 
+function text () {
+    context.font = "italic 15pt Courier New";
+    context.fillStyle = "black";
+    context.fillText("Here lives", 10, 30);
+    context.fillText("three yams...", 80, 50);
+}
+
+//draw characters
+   var flip = false;
+   img1 = new Image();
+   img1.src = 'assets/yam1.png';
+   img2 = new Image();
+   img2.src = 'assets/yam2.png';
+function character () {
+    if(!flip){
+        context.drawImage(img1, 150, 240, 100, 100);
+        context.drawImage(img1, 60, 240, 100, 100);
+        context.drawImage(img1, 240, 240, 100, 100);
+        flip = true;
+    }
+    else{
+        context.drawImage(img2, 155, 240, 100, 100);
+        context.drawImage(img2, 65, 240, 100, 100);
+        context.drawImage(img2, 245, 240, 100, 100);
+        flip = false;
+    }
+
+}
+
+//confetti rain
 function drawCircle () {
     var x;
     var y;
