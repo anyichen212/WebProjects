@@ -4,9 +4,27 @@
     <head> 
     <title>Form Project</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="form.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head> 
 
     <body>
+        <h1> Basketball Counter </h1>
 
+ 
+        <label id="goal"></label>
+        <label id="strike"></label>
+        <br>
+        <input onclick="goal()" name="goal" type="button" value="GOAL">
+        <br>
+        <input onclick="strike()" name="strike" type="button" value="STRIKE">
+        <br>
+        <br>
+        <input onclick="reset()" type="button" value="reset">
+        <input onclick="clearStorage()" type="button" value="Clear Data">
+
+
+        <p id="out"></p>
+        
     </body>
 </html>
