@@ -55,5 +55,5 @@ function reset(){
 
 function clearStorage(){
     localStorage.clear();
-    out.innerHTML = "Refresh the page to use counter again!"
+    out.innerHTML = "Press Reset or Refresh the page to use counter again!"
 }
