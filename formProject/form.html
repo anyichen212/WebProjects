@@ -9,22 +9,24 @@
     </head> 
 
     <body>
-        <h1> Basketball Counter </h1>
+            <h1> Basketball Counter </h1>
+        <div id="form">
+            
+            <label id="goal"></label>
+            <label id="strike"></label>
+            <br>
+            <input onclick="goal()" name="goal" type="button" value="GOAL">
+            <br>
+            <input onclick="strike()" name="strike" type="button" value="STRIKE">
+            <br>
+            <br>
+            <input onclick="reset()" type="button" value="Reset">
+            <input onclick="clearStorage()" type="button" value="Clear Data">
 
+            <p id="out"></p>
+        </div>
  
-        <label id="goal"></label>
-        <label id="strike"></label>
-        <br>
-        <input onclick="goal()" name="goal" type="button" value="GOAL">
-        <br>
-        <input onclick="strike()" name="strike" type="button" value="STRIKE">
-        <br>
-        <br>
-        <input onclick="reset()" type="button" value="Reset">
-        <input onclick="clearStorage()" type="button" value="Clear Data">
 
-
-        <p id="out"></p>
         
     </body>
 </html>

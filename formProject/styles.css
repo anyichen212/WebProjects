@@ -1,3 +1,43 @@
-p{
-    
+body{
+    background-image: url("assets/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h1{
+    position: fixed;
+    top: 20%;
+    left : 50%;
+    font-size: 70px;
+    color: #fff;
+}
+
+#form{
+    position: fixed;
+    top: 43%;
+    left: 58%;
+    background-color: #ffffff70;
+    padding: 10px;
+    text-align: center;
+}
+
+label{
+    font-size: 30px;
+    margin : 10px;
+}
+
+input{
+    width: 170px;
+    font-size: 30px;
+    margin: 5px;
+    border: 3px solid black;
+    border-radius: 10px;
+}
+
+input:hover{
+    background-color: yellow;
+}
+
+input:active{
+    transform: scale(0.90);
 }
