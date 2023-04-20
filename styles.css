@@ -1,11 +1,31 @@
+.container{
+    display: flex;
+    flex-direction: column;
+}
+
+.section{
+    width: 500px;
+}
+
 h2{
     color : SlateBlue;
+    padding-left: 5%;
 }
 
 p{
     display: flex;
     flex-direction: column;
-    border: 2px grey;
+    border: solid 2px grey;
     padding: 10px;
     margin: 20px;
+    box-shadow: 2px 2px 4px #000000;
+}
+
+a{
+    font-size: 18px;
+    padding : 3px;
+}
+
+a:hover{
+    color: aquamarine;
 }
