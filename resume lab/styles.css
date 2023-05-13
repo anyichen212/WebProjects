@@ -1,0 +1,16 @@
+p{
+    margin : 20px;
+}
+
+.container{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+h3{
+    border-bottom: 2px black dotted;
+}
+
+h5{
+    color:slategrey;
+}
