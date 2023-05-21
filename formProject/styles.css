@@ -1,24 +1,27 @@
 body{
     background-image: url("assets/background.jpg");
     background-repeat: no-repeat;
+    background-color: black;
     background-size: cover;
+    height: auto;
+    width: auto;
 }
 
 h1{
     position: fixed;
-    top: 20%;
+    top: 20px;
     left : 50%;
     font-size: 70px;
     color: #fff;
 }
 
 #form{
-    position: fixed;
     top: 43%;
     left: 58%;
     background-color: #ffffff70;
     padding: 10px;
     text-align: center;
+    margin: 25% 7% 7% 57%;
 }
 
 label{
