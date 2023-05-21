@@ -19,7 +19,7 @@ function mainLoop () {
     clear();
     update();
     draw();
-    window.setTimeout(mainLoop, 100);
+    window.setTimeout(mainLoop, 80);
 }
 
 function clear(){
@@ -52,12 +52,37 @@ function update(){
             jump();
         }
     }
-    else if(count > 20 && count < 31){
+    else if(count < 21){
+
+    }
+    else if (count < 31){
             jump();
             duckSpeech();
     }
+    else if(count < 43){
+        if(count === 32){
+            gY += 15;
+        }else if( count === 33){
+            gY -= 15;
+        }
+        grandmaSpeech();
+        duckSpeech2();
+    }
+    else if(count < 53){
+        duckSpeech2();
+    }
+    else if(count < 81){
+        if(dX < 590){
+            dX+=20;
+            jump();
+        }
+    } 
+    else{
+        count = -1;
+    }
 
     count++;
+    //console.log(count);
 }
 
 function jump(){
@@ -116,6 +141,30 @@ function duckSpeech(){
     }
 }
 
+function duckSpeech2(){
+    px2 = x_2+(w2/2) - 10;
+    py2 = y_2+h2 +20 ;
+
+    context.fillStyle = '#0009';
+    context.beginPath();
+    context.moveTo(px2, py2);  //Startpoint (x, y)
+    px2 += 5;
+    py2 += 10;
+    context.lineTo(px2, py2); //Point 1    (x, y)
+    px2 += 5;
+    py2 -= 10;
+    context.lineTo(px2, py2);  //Point 2    (x, y)
+    context.closePath();
+    context.fill();
+
+    context.fillRect(x_2 + 25,y_2 + 50,w2 - 80,h2 - 30,r2);
+
+    context.font = "30px Arial";
+    context.fillStyle = "white";
+    context.fillText("...", x_2 + 35 , y_2 + 65);
+
+}
+
 //speech bubble
 var x = 110;
 var y = 90;
@@ -142,4 +191,8 @@ function grandmaSpeech(){
     context.fill();
 
     context.fillRect(x,y,width,height,radius);
+
+    context.font = "30px Arial";
+    context.fillStyle = "white";
+    context.fillText("QUIET.", x + 10 , y + 40);
 }
