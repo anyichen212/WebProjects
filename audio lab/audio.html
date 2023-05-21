@@ -6,17 +6,51 @@
 
         <title>Audio Lab</title>
         <link rel="stylesheet" href="styles.css" />
-        <script src="audio.js"></script>
     </head>
     <body>
         <audio id="myAudio">
-            <source src="" type="audio/mpeg">
+            <source src="assets/squeak4.mp3" type="audio/mpeg">
+            Your browser does not support the audio
+        </audio>
+        <audio id="audio2">
+            <source src="assets/squeak3.mp3" type="audio/mpeg">
+            Your browser does not support the audio
+        </audio>
+        <audio id="audio3">
+            <source src="assets/squeak2.mp3" type="audio/mpeg">
+            Your browser does not support the audio
+        </audio>
+        <audio id="audio4">
+            <source src="assets/christmas.mp3" type="audio/mpeg">
+            Your browser does not support the audio
+        </audio>
+        <audio id="audio5">
+            <source src="assets/squeak1.mp3" type="audio/mpeg">
             Your browser does not support the audio
         </audio>
 
         <div>
-            <button id="b1" type="button"></button>
-            <button id="b1" type="button"></button>
+            <button id="b1" type="button" onclick="playAudio()">
+                <img src="https://em-content.zobj.net/thumbs/240/microsoft/319/bird_1f426.png" alt="buttonpng"/>
+            </button>
+            <button id="b2" type="button" onclick="playAudio2()">
+                <img src="https://em-content.zobj.net/thumbs/240/twitter/322/clown-face_1f921.png" alt="buttonpng"/>
+            </button>
+            <button id="b3" type="button" onclick="playAudio3()">
+                <img src="https://em-content.zobj.net/thumbs/240/microsoft/319/hatching-chick_1f423.png" alt="buttonpng"/>
+            </button>
+            <button id="b4" type="button" onclick="playAudio4()">
+                <img src="https://em-content.zobj.net/thumbs/240/google/350/christmas-tree_1f384.png" alt="buttonpng"/>
+            </button>
+            <button id="b4" type="button" onclick="playAudio5()">
+                <img src="https://em-content.zobj.net/thumbs/240/microsoft/319/question-mark_2753.png" alt="buttonpng"/>
+            </button>
         </div>
+        <div style="align-items: center;">
+            <h2>CLICK THE BUTTONS FOR SOUNDS!!</h2>
+            <a href = "/WebProjects">RETURN</a>
+        </div>
+
+        <script src="audio.js"></script>
     </body>
 </html>
