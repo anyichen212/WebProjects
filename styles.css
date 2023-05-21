@@ -1,6 +1,7 @@
 .container{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .section{
@@ -12,13 +13,18 @@ h2{
     padding-left: 5%;
 }
 
-p{
+.item{
     display: flex;
     flex-direction: column;
     border: solid 2px grey;
     padding: 10px;
     margin: 20px;
     box-shadow: 2px 2px 4px #000000;
+}
+
+.links{
+    flex-direction: row;
+    margin: 4px;
 }
 
 a{
